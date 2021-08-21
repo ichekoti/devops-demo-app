@@ -14,7 +14,7 @@ if ($conn->connect_errno) {
 else {
     $dbSuccess = true;
 }
-$sql = "SELECT version FROM dbversion ORDER BY id DESC LIMIT 1";
+$sql = "select @@version as version;";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
